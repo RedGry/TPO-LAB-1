@@ -22,6 +22,6 @@ public class Sin {
         }
 
         // Дополнительно округляем, чтобы легче было проверять
-        return Math.round(result * 10e3) / 10e3;
+        return result;
     }
 }
