@@ -3,14 +3,18 @@ package com.krivonosovandmarkov.task3;
 import lombok.Data;
 import lombok.SneakyThrows;
 
+import java.util.HashSet;
 import java.util.Set;
 
-@Data
 public class Space {
 
-    Set<Human> astronauts;
-    Set<Rocket> rockets;
-    Set<Star> stars;
+    private final Set<Human> astronauts = new HashSet<>();
+
+    public Set<Star> getStars() {
+        return this.stars;
+    }
+
+    private final Set<Star> stars = new HashSet<>();
 
     // Добавляет нового "космонавта"
     @SneakyThrows
@@ -25,5 +29,6 @@ public class Space {
         if (this.stars.contains(star)) throw new Exception("Такая звезда уже существует!");
         this.stars.add(star);
     }
+
 
 }

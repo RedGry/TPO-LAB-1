@@ -6,5 +6,5 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class Star {
-    Color color;
+    private Color color;
 }

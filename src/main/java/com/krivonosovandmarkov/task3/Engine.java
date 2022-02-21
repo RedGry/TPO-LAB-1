@@ -6,7 +6,7 @@ import lombok.SneakyThrows;
 @Data
 public class Engine {
 
-    TypeOfVolume sound = TypeOfVolume.WHISTLE;
+    private TypeOfVolume sound = TypeOfVolume.WHISTLE;
 
     // Увеличение уровня шума
     @SneakyThrows
@@ -18,7 +18,7 @@ public class Engine {
     // Уменьшение уровня шума
     @SneakyThrows
     public void decreaseSound() {
-        if (sound.ordinal() - 1 >= TypeOfVolume.values().length) throw new Exception("Тише двигатель не работает!");
+        if (sound.ordinal() - 1 < 0) throw new Exception("Тише двигатель не работает!");
         this.sound = TypeOfVolume.values()[sound.ordinal() - 1];
     }
 
