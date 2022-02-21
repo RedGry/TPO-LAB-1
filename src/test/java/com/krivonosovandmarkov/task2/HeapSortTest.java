@@ -3,10 +3,10 @@ package com.krivonosovandmarkov.task2;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class HeapSortTest {
+
     @Test
     @DisplayName("Check positive values")
     void checkSorting() {
@@ -22,24 +22,24 @@ public class HeapSortTest {
     @Test
     @DisplayName("Check empty")
     void checkEmpty() {
-        assertAll(
-                () -> assertArrayEquals(new int[]{}, HeapSort.sort(new int[]{}))
-        );
+        assertArrayEquals(new int[]{}, HeapSort.sort(new int[]{}));
     }
 
     @Test
     @DisplayName("Check negative values")
     void checkNegativeValues() {
-        assertAll(
-                () -> assertArrayEquals(new int[]{-5, -4, -3, -2, -1}, HeapSort.sort(new int[]{-5, -1, -4, -3, -2}))
-        );
+        assertArrayEquals(new int[]{-5, -4, -3, -2, -1}, HeapSort.sort(new int[]{-5, -1, -4, -3, -2}));
     }
 
     @Test
     @DisplayName("Check zeros")
     void checkZeros() {
-        assertAll(
-                () -> assertArrayEquals(new int[]{0,0,0,0,0}, HeapSort.sort(new int[]{0,0,0,0,0}))
-        );
+        assertArrayEquals(new int[]{0,0,0,0,0}, HeapSort.sort(new int[]{0,0,0,0,0}));
+    }
+
+    @Test
+    @DisplayName("Check null")
+    void checkNull() {
+        assertThrows(NullPointerException.class, () -> HeapSort.sort(null));
     }
 }
