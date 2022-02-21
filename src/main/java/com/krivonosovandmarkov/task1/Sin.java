@@ -5,6 +5,18 @@ public class Sin {
     // https://function-x.ru/chapter9-4/rows4_clip_image063.gif
 
     public static double calc(double x, int n){
+        double PI2 = Math.PI * 2;
+
+        if (x >= 0) {
+            while (x > PI2) {
+                x -= 2 * PI2;
+            }
+        } else if (x < 0){
+            while (x < PI2) {
+                x += PI2;
+            }
+        }
+
         double result = 0;  // Хранится результат
 
         double xx = x * x;  // x^2
