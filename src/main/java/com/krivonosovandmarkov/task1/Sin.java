@@ -9,7 +9,7 @@ public class Sin {
 
         if (x >= 0) {
             while (x > PI2) {
-                x -= 2 * PI2;
+                x -= PI2;
             }
         } else if (x < 0){
             while (x < PI2) {
